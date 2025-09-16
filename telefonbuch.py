@@ -138,7 +138,7 @@ Jawel
       print(f"{name}s Telefonnummer ist {self.telefonbuch[name]}")
     else:
       print(f"Der {name} ist nicht im Telefonbuch.")
-      hinzufügen = self.eingabe(f"Möchtest du {name} dem Telefonbuch hinzufügen? (ja/nein)").strip().lower()
+      hinzufügen = self.eingabe(f"Möchtest du {name} dem Telefonbuch hinzufügen? (ja/nein)",str).strip().lower()
       if hinzufügen in self.ja:
         nummer = self.eingabe(f"Welche Rufnummer hat {name} ? ",int)
         nummer = self.nummer_formatieren(nummer)
@@ -209,7 +209,7 @@ Jawel
   # Das hier ist das Hauptprogramm.
   def start(self):
     while True:
-      Machen = self.eingabe("Was möchtest du machen(hinzufügen/entfernen/anzeigen/Telefonbuch/beenden/speichern ",str)
+      Machen = self.eingabe("Was möchtest du machen(hinzufügen/entfernen/anzeigen/Telefonbuch/beenden/speichern ",str).strip().lower()
           # Hier wird die gesuchte Namens Nummer angezeigt.
       if Machen=="anzeigen":
         self.anzeigen()
@@ -240,3 +240,11 @@ Jawel
 telefonbuch = Telefonbuch()
 telefonbuch.laden()
 telefonbuch.start()
+
+
+    
+  
+
+
+    
+  
